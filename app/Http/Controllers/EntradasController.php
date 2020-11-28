@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\entradas;
 use Illuminate\Http\Request;
 
 class EntradasController extends Controller
@@ -11,6 +12,10 @@ class EntradasController extends Controller
     }
 
     public function create(){
+        $entrada = new entradas();
+        $entrada->tipo = "Prueba";
+        $entrada->monto = 100.10;
+        $entrada->save();
         return view('entradas.create');
     }
 
