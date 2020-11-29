@@ -23,10 +23,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="">Entradas <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ route('entradas.index.get') }}">Entradas <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Salidas</a>
+            <a class="nav-link" href="{{ route('salidas.index.get') }}">Salidas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Balance</a>
