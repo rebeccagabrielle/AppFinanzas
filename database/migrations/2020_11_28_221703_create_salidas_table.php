@@ -16,8 +16,10 @@ class CreateSalidasTable extends Migration
         Schema::create('salidas', function (Blueprint $table) {
             $table->id();
             $table->text("tipo");
+            $table->date('fecha');
+            $table->text('file');
             $table->double("monto",8,2);
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

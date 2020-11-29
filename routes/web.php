@@ -30,6 +30,9 @@ Route::get('login', LoginController::class);
 Route::get('entradas', [EntradasController::class, 'index']);
 
 Route::get('entradas/create', [EntradasController::class, 'create']);
+Route::post('entradas/create', [EntradasController::class, 'create_post'])->name('entradas.create.post');
+
+
 
 Route::get('entradas/show', [EntradasController::class, 'show']);
 

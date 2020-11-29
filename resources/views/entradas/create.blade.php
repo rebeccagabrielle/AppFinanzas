@@ -6,7 +6,8 @@
 
     <h1>Registra tu entrada</h1>
 
-    <form action="">
+    <form action="{{ route('entradas.create.post') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
         <label for="">Tipo de entrada</label>
         <input type="text"

@@ -16,6 +16,8 @@ class CreateEntradasTable extends Migration
         Schema::create('entradas', function (Blueprint $table) {
             $table->id();
             $table->text("tipo");
+            $table->date('fecha');
+            $table->text('file');
             $table->double("monto",8,2);
             $table->timestamps(); 
         });
