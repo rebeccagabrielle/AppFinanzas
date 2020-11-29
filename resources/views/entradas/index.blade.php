@@ -5,8 +5,10 @@
 @section('content')
 
     <div class="p-5">
-        <h1>Todas tus entradas</h1>
 
+        <div><h1 class="text-success">Todas tus entradas</h1></div>
+        <div class="py-5"><a name="botoCrear" id="" class="btn btn-success" href="{{ route('entradas.create.get') }}" role="button">Registrar Entrada</a></div>
+        
         <table class="table">
 
             <!-- Header tabla -->

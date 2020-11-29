@@ -5,7 +5,9 @@
 @section('content')
 
     <div class="p-5">
-        <h1>Todas tus salidas</h1>
+
+        <div><h1 class="text-warning">Todas tus Salidas</h1></div>
+        <div class="py-5"><a name="botoCrear" id="" class="btn btn-warning" href="{{ route('salidas.create.get') }}" role="button">Registrar Salida</a></div>
 
         <table class="table">
 
