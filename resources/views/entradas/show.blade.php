@@ -4,6 +4,8 @@
 
 @section('content')
 
-    <h1>Entrada</h1>
+    <h1 class="p-5">Entrada</h1>
+
+
     
 @endsection
