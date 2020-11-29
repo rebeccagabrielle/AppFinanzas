@@ -6,7 +6,8 @@
 
     <h1>Registra tu salida</h1>
 
-    <form action="">
+    <form action="{{ route('salidas.create.post') }}" method="POST" enctype="multipart/form-data">
+        @csrf 
         <div class="form-group">
         <label for="">Tipo de Salida</label>
         <input type="text"
