@@ -10,20 +10,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+
+    <!-- Navbar -->
       
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Control de finanzas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="">Entradas <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Salidas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Balance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenedor -->
+
     <div class="container">
 
-      <div>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Regular link</a>
-          <a class="dropdown-item active" href="#">Active link</a>
-          <a class="dropdown-item" href="#">Another link</a>
-        </div>
-      </div>
-
-      <div>
         @yield('content')
-      </div>  
+      
 
     </div>
       
