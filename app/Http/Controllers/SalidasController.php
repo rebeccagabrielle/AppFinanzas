@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class SalidasController extends Controller
 {
     public function index(){
-        return view('salidas.index');
+        $salidas = salidas::all();
+        return view('salidas.index', compact('salidas')   );
     }
 
     public function create_post(Request $request)
@@ -22,14 +23,13 @@ class SalidasController extends Controller
         $salidas->fecha = $request->fechaSalida;
         $salidas->monto = $request->montoSalida;
         $salidas->save();
-        return redirect(route('salidas.show.get'));
+        return redirect(route('salidas.index.get'));
     }
     public function create(){
         return view('salidas.create');
     }
 
     public function show(){
-        $salida = salidas::all();
-        return view('salidas.show', compact('salida'));
+        return view('show.index');
     }
 }

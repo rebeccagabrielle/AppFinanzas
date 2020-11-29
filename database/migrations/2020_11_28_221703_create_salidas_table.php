@@ -20,6 +20,8 @@ class CreateSalidasTable extends Migration
             $table->text('file');
             $table->double("monto",8,2);
             $table->timestamps(); 
+            $table->integer('user_id')->unsigned();   
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
