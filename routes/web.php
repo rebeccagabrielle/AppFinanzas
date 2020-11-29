@@ -25,18 +25,18 @@ Route::get('/', function () {
 
 Route::get('login', LoginController::class);
 
-//rutas entradas
+//rutas ========================= entradas
+Route::get('entradas',        [EntradasController::class, 'index'])->name('entradas.index.get');
+Route::get('entradas/create', [EntradasController::class, 'create'])->name('entradas.create.get');
+Route::get('entradas/show',   [EntradasController::class, 'show'])->name('entradas.show.get');
+//Post
+Route::post('entradas/create',[EntradasController::class, 'create_post'])->name('entradas.create.post');
 
-Route::get('entradas', [EntradasController::class, 'index']);
 
-Route::get('entradas/create', [EntradasController::class, 'create']);
 
-Route::get('entradas/show', [EntradasController::class, 'show']);
-
-//rutas salidas
-
-Route::get('salidas', [SalidasController::class, 'index']);
-
-Route::get('salidas/create', [SalidasController::class, 'create']);
-
-Route::get('salidas/show', [SalidasController::class, 'show']);
+//rutas ========================= salidas
+Route::get('salidas',         [SalidasController::class, 'index'])->name('salidas.index.get');
+Route::get('salidas/create',  [SalidasController::class, 'create'])->name('salidas.create.get');
+Route::get('salidas/show',    [SalidasController::class, 'show'])->name('salidas.show.get');
+//post
+Route::post('salidas/create', [SalidasController::class, 'create_post'])->name('salidas.create.post');
