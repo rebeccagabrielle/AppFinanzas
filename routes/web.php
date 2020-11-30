@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EntradasController;
 use App\Http\Controllers\SalidasController;
-use App\Http\Controllers\balanceController;
 
 
 /*

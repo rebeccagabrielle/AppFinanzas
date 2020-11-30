@@ -1,79 +1,62 @@
 @extends('layouts.plantillaMenu')
-
 @section('title', 'Balance')
-
 @section('content')
-
     <div class="p-5">
 
         <!-- TABLAS -->
+        <div><h1 class="text-primary">Balance mensual</h1></div>
+        <div class="py-5"><a name="botonExport" id="" class="btn btn-primary" href="" role="button">Exportar Balance</a></div>
+        
         <div class="row">
-            <!-- TABLA ENTRADA -->
-            <div class="col">
-                <div><h1 class="text-success">Todas tus entradas</h1></div>
-                
+            <div class="col-md-6">
                 <table class="table">
-
                     <!-- Header tabla -->
                     <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Tipo de entrada</th>
+                            <th scope="col">Monto</th>
+                        </tr>
                     </thead>
-
                     <!-- Body tabla -->
-
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                
-                    </tbody>
-                    
-                </table>
+                        @foreach ($entradas as $e)
+                        <tr>
+                            <td>{{$e->tipo}}</td>
+                            <td>${{number_format($e->monto,2)}}</td>
+                        </tr>              
+                        @endforeach
+                    </tbody>        
+                </table>        
             </div>
-
-            <!-- TABLA SALIDAS -->
-
-            <div class="col">
-                <div><h1 class="text-success">Todas tus salidas</h1></div>
-                
+            <div class="col-md-6">
                 <table class="table">
-
                     <!-- Header tabla -->
                     <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Tipo salida</th>
+                            <th scope="col">Monto</th>
+                        </tr>
                     </thead>
-
                     <!-- Body tabla -->
-
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                
-                    </tbody>
-                    
+                        @foreach ($salidas as $s)
+                        <tr>
+                            <td>{{$s->tipo}}</td>
+                            <td>${{number_format($s->monto,2)}}</td>
+                        </tr>              
+                        @endforeach 
+                    </tbody>        
                 </table>
             </div>
         </div>
+        <div class="container">
+            <h4>Total entradas: ${{ number_format($resultados->entradas,2) }}</h4>
+            <h4>Total salidas: ${{ number_format($resultados->salidas,2) }}</h4>
+            <br>
+            <h4>Total: ${{ number_format($resultados->resultado,2) }}</h4>
 
+        </div>
         <!-- GRAFICA -->
-
         <div class="row"></div>
 
     </div>
