@@ -4,9 +4,7 @@
     <div class="p-5">
 
         <!-- TABLAS -->
-        <div><h1 class="text-primary">Balance mensual</h1></div>
-        <div class="py-5"><a name="botonExport" id="" class="btn btn-primary" href="" role="button">Exportar Balance</a></div>
-        
+        <div><h1 class="text-primary">Balance mensual</h1></div>       
         <div class="row">
             <div class="col-md-6">
                 <table class="table">
