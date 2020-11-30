@@ -9,7 +9,8 @@ class EntradasController extends Controller
 {
     public function index()
     {
-        return view('entradas.index');
+        $entradas = entradas::all();
+        return view('entradas.index', compact('entradas'));
     }
 
     public function create()
@@ -31,7 +32,9 @@ class EntradasController extends Controller
         $entrada->tipo = $request->tipoEntrada;
         $entrada->fecha = $request->fechaEntrada;
         $entrada->monto = $request->montoEntrada;
-        return $entrada;
+        $entrada->user_id = session('id'); 
+        $entrada->save();
+        return redirect('/entradas');
     }
 
 

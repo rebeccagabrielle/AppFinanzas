@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BalanceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EntradasController;
@@ -22,9 +23,14 @@ Route::get('/', function () {
 });
 
 //ruta login
+Route::get ('login', [LoginController::class, 'index'])->name('login.index.get');
+Route::post('login', [LoginController::class, 'login_action'])->name('login.index.post');
+Route::get('login',  [LoginController::class, 'log_out'])->name('login.logout.get');
 
-Route::get('login', LoginController::class);
 
+
+
+Route::group(['middleware' => 'auth'], function () {
 //rutas ========================= entradas
 Route::get('entradas',        [EntradasController::class, 'index'])->name('entradas.index.get');
 Route::get('entradas/create', [EntradasController::class, 'create'])->name('entradas.create.get');
@@ -40,3 +46,6 @@ Route::get('salidas/create',  [SalidasController::class, 'create'])->name('salid
 Route::get('salidas/show',    [SalidasController::class, 'show'])->name('salidas.show.get');
 //post
 Route::post('salidas/create', [SalidasController::class, 'create_post'])->name('salidas.create.post');
+//rutas ========================= balance
+Route::get('balance',         [BalanceController::class, 'index'])->name('balance.index.get');
+});

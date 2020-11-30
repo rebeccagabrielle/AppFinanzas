@@ -22,6 +22,7 @@ class SalidasController extends Controller
         $salidas->tipo = $request->tipoSalida;
         $salidas->fecha = $request->fechaSalida;
         $salidas->monto = $request->montoSalida;
+        $salidas->user_id = session('id'); 
         $salidas->save();
         return redirect(route('salidas.index.get'));
     }

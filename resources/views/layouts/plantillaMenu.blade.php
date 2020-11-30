@@ -32,7 +32,7 @@
             <a class="nav-link" href="#">Balance</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cerrar Sesión</a>
+            <a class="nav-link" href="{{route('login.logout.get')}}">Cerrar Sesión</a>
           </li>
         </ul>
       </div>
@@ -56,7 +56,8 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready( function () {
-            $('#table_id').DataTable();
+            $('#table_id1').DataTable();
+            $('#table_id2').DataTable();
         } );
     </script>
 
