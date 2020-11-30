@@ -27,7 +27,7 @@
             <a class="nav-link" href="{{ route('salidas.index.get') }}">Salidas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Balance</a>
+            <a class="nav-link" href="{{ route('balance.get') }}">Balance</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Cerrar Sesión</a>
